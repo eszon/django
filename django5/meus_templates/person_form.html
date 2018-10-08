@@ -8,16 +8,11 @@
     <title>Document</title>
 </head>
 <body>
+    <form action="{% url 'person_new'  %}" method="POST" enctype="multipart/form-data">
 
-        <ul>
-        {% for person in persons  %}
-
-            <li>    {{  person.first_name }}        </li>
-
-        {% endfor %}
-        </ul>
-
-        <a href=" {% url 'person_new' %}"> Novo Cliente</a>
-
+        {%  csrf_token %}
+        {{  form  }}
+ <button type="submit">Salvar</button>
+    </form>
 </body>
 </html>
